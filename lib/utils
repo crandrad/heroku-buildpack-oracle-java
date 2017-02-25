@@ -45,7 +45,7 @@ export_env_dir() {
 
 java_version() {
   base=$1
-  echo $(${base}java -version 2>&1 | head -n 1 | cut -d '"' -f 2)
+  echo $(${base}java -version 2>&1 | grep "java version" | cut -d '"' -f 2)
 }
 
 install_java() {
