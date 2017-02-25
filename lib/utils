@@ -97,7 +97,7 @@ install_jce() {
 
 maven_version() {
   base=$1
-  echo $(${base}mvn --version 2>&1 | head -n 1 | cut -d ' ' -f 3)
+  echo $(${base}mvn --version 2>&1 | grep "Apache Maven" | cut -d ' ' -f 3)
 }
 
 install_maven() {
